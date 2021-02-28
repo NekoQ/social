@@ -1,0 +1,26 @@
+<div class="box">
+            <div>
+                <strong class='author_name'>
+                    <%= post.person.name %>
+                </strong>
+                <small class="network">
+                    <%= post.network %>
+                </small>
+            </div>
+            <div class='date'>
+                <small>
+                    <%= post.date %>
+                </small>
+            </div>
+            <div class='text'>
+                <%= post.text %>
+            </div>
+            <div>
+                <%= link_to "More" , post.link, target: :_blank %>
+            </div>
+            <% post.person.lists.each do |list| %>
+                <div class="tag is-medium">
+                    <%= list %>
+                </div>
+            <%end%>
+</div>

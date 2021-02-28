@@ -1,0 +1,32 @@
+<div class="columns">
+<div class="column">
+<%= render @posts%>
+<%= will_paginate @posts %>
+</div>
+<div class="column">
+    <nav class="panel">
+    <p class="panel-heading">
+        Filers
+    </p>
+    <div class='panel-block'>
+    <form action="/posts" method="GET">
+        <label class="label">Date</label>
+            <input type="date" name="start_date" >
+            <input type="date" name="end_date" >
+        <div>
+        <label class="label">Social networks</label>
+            <%Network.all.each do |network|%>
+                <%= check_box_tag 'networks[]', network.name%><%= network.name%>
+            <% end %>
+        </div>
+        <div>
+        <label class="label">Lists</label>
+            <%List.all.each do |list|%>
+                <%= check_box_tag 'lists[]', list.name%><%= list.name%>
+            <% end %>
+        </div>
+        <input class='input' type='text' name="search_text" value=<%params[:search_text]%>>
+        <input type="submit" value="Apply">
+    </form>
+    </div>
+</div>
