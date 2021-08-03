@@ -44,3 +44,5 @@ rails db:create db:migrate db:seed
 ```shell
 rails s
 ```
+
+![img](https://github.com/nekoq/social/blob/main/img.png?raw=true)
